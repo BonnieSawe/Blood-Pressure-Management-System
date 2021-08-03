@@ -22,7 +22,8 @@ class Login extends Component
             'password' => 'required',
         ]);
         if(Auth::attempt(array('email' => $this->email, 'password' => $this->password))){
-                session()->flash('message', "Welcome back ". auth()->user()->name );
+            session()->flash('message', "Welcome back ". auth()->user()->name );
+            return redirect()->to('/');
         }else{
             session()->flash('error', 'email and password are wrong.');
         }
