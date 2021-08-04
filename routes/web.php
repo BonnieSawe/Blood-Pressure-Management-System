@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('login', Login::class);
+Route::get('login', Login::class)->name('login');
 Route::middleware(['auth', 'web'])->group(function () {
-    Route::get('', Dashboard::class);
+    Route::get('', Dashboard::class)->name('dashboard');
     Route::get('patients', Patient::class);
     Route::get('staff', Staff::class);
     Route::get('observations', Observation::class);

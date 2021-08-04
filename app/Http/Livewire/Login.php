@@ -23,11 +23,15 @@ class Login extends Component
         ]);
         if(Auth::attempt(array('email' => $this->email, 'password' => $this->password))){
             session()->flash('message', "Welcome back ". auth()->user()->name );
-            return redirect()->to('/');
+            return redirect(route('dashboard'));
         }else{
             session()->flash('error', 'email and password are wrong.');
         }
     }
 
+    public function logout()
+    {
+        auth()->logout();
+    }
 
 }
