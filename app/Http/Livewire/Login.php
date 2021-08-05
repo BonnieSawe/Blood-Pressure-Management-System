@@ -24,7 +24,7 @@ class Login extends Component
             session()->flash('message', "Welcome back ". auth()->user()->name );
             return redirect(route('dashboard'));
         }else{
-            session()->flash('error', 'email and password are wrong.');
+            session()->flash('error', 'Wrong credentials!');
         }
     }
 }

@@ -11,7 +11,7 @@
     <meta name="keywords" content="keywords,here">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">  
+    <link href="{{asset('/css/app.css')}}" rel="stylesheet"> 
     @livewireStyles
 </head>
 
@@ -88,6 +88,7 @@
         </div>
 
     @livewireScripts
+    <script src="{{asset('/js/app.js')}}"></script>
 </body>
 
 </html>
