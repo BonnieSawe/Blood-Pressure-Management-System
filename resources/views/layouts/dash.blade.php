@@ -89,6 +89,7 @@
 
     @livewireScripts
     <script src="{{asset('/js/app.js')}}"></script>
+    <script src="{{asset('/js/toggle.js')}}"></script>
 </body>
 
 </html>
