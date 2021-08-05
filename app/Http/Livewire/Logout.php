@@ -15,7 +15,6 @@ class Logout extends Component
          */
         public function logout()
         {
-            info(566);
             auth()->logout();
             return redirect()->route('login');
         }
