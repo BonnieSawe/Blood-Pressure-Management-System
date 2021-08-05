@@ -10,3 +10,5 @@ composer install,
 create .env and add appropriate variables,
 php artisan migrate --seed to create and seed tables,
 php artisan serve
+
+ I have also written tests for Patient and Authentication tests
