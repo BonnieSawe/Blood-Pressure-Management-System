@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -40,4 +42,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get all of the observations for the User
+     *
+     * @return HasMany
+     */
+    public function observations(): HasMany
+    {
+        return $this->hasMany(Observation::class);
+    }
+
+    /**
+     * Get the user associated with the Role
+     *
+     * @return HasOne
+     */
+    public function role(): HasOne
+    {
+        return $this->hasOne(Role::class);
+    }
 }

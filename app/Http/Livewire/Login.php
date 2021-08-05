@@ -7,8 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Login extends Component
 {
-    public $users, $email, $password;
-    public $loginForm = false;
+    public $email, $password;
 
     public function render()
     {
@@ -28,10 +27,4 @@ class Login extends Component
             session()->flash('error', 'email and password are wrong.');
         }
     }
-
-    public function logout()
-    {
-        auth()->logout();
-    }
-
 }

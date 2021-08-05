@@ -15,6 +15,14 @@ class CreateObservationsTable extends Migration
     {
         Schema::create('observations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('patient_id');
+            //doc or nurse
+            $table->foreignId('user_id');
+            $table->double('systolic');
+            $table->double('diastolic');
+            $table->dateTime('date');
+            $table->string('category')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
