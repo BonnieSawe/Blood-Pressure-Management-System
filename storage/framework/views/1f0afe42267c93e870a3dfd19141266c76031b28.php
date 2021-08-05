@@ -1,0 +1,1 @@
+<?php /**PATH /home/vagrant/space/nursing-app/resources/views/vendor/livewire-tables/stubs/modals.blade.php ENDPATH**/ ?>
