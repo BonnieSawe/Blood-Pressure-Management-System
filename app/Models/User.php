@@ -62,4 +62,34 @@ class User extends Authenticatable
     {
         return $this->hasOne(Role::class);
     }
+
+    /**
+     * User is Admin
+     *
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return $this->role_id == 1;
+    }
+
+    /**
+     * User is Nurse
+     *
+     * @return bool
+     */
+    public function isDoctor()
+    {
+        return $this->role_id == 2;
+    }
+
+    /**
+     * Client is  Doctor
+     *
+     * @return bool
+     */
+    public function isNurse()
+    {
+        return $this->role_id == 3;
+    }
 }

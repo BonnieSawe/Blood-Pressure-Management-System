@@ -8,7 +8,7 @@ class Patient extends Component
 {
     public $form = [
         'name',
-        'age',
+        'dob',
         'email',
         'phone',
         'gender',
@@ -16,20 +16,22 @@ class Patient extends Component
         'height'
     ];
     
-    public function submit()
+    public function create()
     {
         $this->validate([
             'name' => 'required',
             'phone' => 'required',
-            'age' => 'required',
+            'dob' => 'required',
             'gender' => 'required',
         ]);
 
-        $patient = Patient::create($this->form);
+        $patient = new Patient();
+
+        $patient->create($this->form);
     } 
 
     public function render()
     {
-        return view('livewire.patient');
+        return view('livewire.patients')->extends('layouts.dash');  
     }
 }

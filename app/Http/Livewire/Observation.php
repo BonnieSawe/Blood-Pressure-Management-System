@@ -18,6 +18,6 @@ class Observation extends Component
     
     public function render()
     {
-        return view('livewire.observation');
+        return view('livewire.observation')->extends('layouts.dash');  
     }
 }
