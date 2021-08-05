@@ -5,6 +5,12 @@
         </div>
     </div>
     <div class="container mx-auto mt-4">
+        <div>
+            <a href="{{route('staff.create')}}" class="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold mb-3 py-2 px-4 rounded">
+                Create <i class="fa fa-plus"></i>
+            </a>
+        </div>
+        <br>
         @include('layouts.messages')
         <livewire:staff-table
             searchable="name, email, gender" 

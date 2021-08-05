@@ -4,6 +4,7 @@ use App\Http\Livewire\Login;
 use App\Http\Livewire\Staff;
 use App\Http\Livewire\Patient;
 use App\Http\Livewire\Dashboard;
+use App\Http\Livewire\CreateStaff;
 use App\Http\Livewire\Observation;
 use App\Http\Livewire\CreatePatient;
 use Illuminate\Support\Facades\Route;
@@ -24,5 +25,6 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('patients', Patient::class)->name('patients');
     Route::get('patients/create', CreatePatient::class)->name('patients.create');
     Route::get('staff', Staff::class)->name('staff');
+    Route::get('staff/create', CreateStaff::class)->name('staff.create');
     Route::get('observations', Observation::class)->name('observations');
 });
