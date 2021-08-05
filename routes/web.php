@@ -8,6 +8,7 @@ use App\Http\Livewire\CreateStaff;
 use App\Http\Livewire\Observation;
 use App\Http\Livewire\CreatePatient;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\CreateObservation;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,10 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::get('patients', Patient::class)->name('patients');
     Route::get('patients/create', CreatePatient::class)->name('patients.create');
     Route::get('staff', Staff::class)->name('staff');
-    Route::get('staff/create', CreateStaff::class)->name('staff.create');
     Route::get('observations', Observation::class)->name('observations');
+    Route::get('observations/create', CreateObservation::class)->name('observations.create');
+
+    Route::group(['middleware' => 'role:admin'], function () {
+        Route::get('staff/create', CreateStaff::class)->name('staff.create');
+    });
 });

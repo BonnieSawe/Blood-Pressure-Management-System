@@ -21,7 +21,8 @@ class Observation extends Model
         'systolic',
         'diastolic',
         'category',
-        'description'
+        'description',
+        'date',
     ];
 
     /**
