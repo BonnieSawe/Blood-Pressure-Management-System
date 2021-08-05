@@ -24,11 +24,12 @@ class PatientFactory extends Factory
     public function definition()
     {
         $gender_options = ['male', 'female'];
+        $gender = array_rand((array) $gender_options, (int) 1);
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'phone' => $this->faker->e164PhoneNumber,
-            'gender' => array_rand((array) $gender_options, (int) 1),
+            'gender' => $gender_options[$gender],
             'dob' => Carbon::parse($this->faker->dateTimeBetween('1960-01-01', '2020-12-31'))
         ];
     }
