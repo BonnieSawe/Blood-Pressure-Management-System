@@ -36,7 +36,7 @@ class StaffTable extends DataTableComponent
             Column::make('E-mail', 'email')
                 ->sortable()
                 ->searchable(),
-            Column::make('Verified', 'email_verified_at')
+            Column::make('Joined', 'created_at')
                 ->sortable(),
         ];
     }
