@@ -12,9 +12,6 @@
         </div>
         <br>
         @include('layouts.messages')
-        <livewire:observations-table
-            searchable="name, email, gender" 
-            exportable 
-        />
+        <livewire:observations-table/>
     </div>
 </div>
